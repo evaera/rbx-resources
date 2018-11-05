@@ -1,0 +1,17 @@
+{
+  "name": "rbx-resources",
+  "version": "0.0.1",
+  "description": "RoStrap Resources",
+  "main": "./src/resources.lua",
+  "dependencies": {},
+  "devDependencies": {
+    "rbx-types": "^1.0.65"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "evaera",
+  "license": "MIT",
+  "typings": "./index.d.ts"
+}
