@@ -1,6 +1,6 @@
 {
   "name": "rbx-resources",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "RoStrap Resources",
   "main": "./src/resources.lua",
   "dependencies": {},
@@ -13,5 +13,9 @@
   "keywords": [],
   "author": "evaera",
   "license": "MIT",
-  "typings": "./index.d.ts"
+  "typings": "./index.d.ts",
+  "repository": {
+		"type": "git",
+		"url": "https://github.com/evaera/rbx-resources.git"
+	}
 }
