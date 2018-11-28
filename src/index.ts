@@ -4,7 +4,7 @@ const RESOURCES_NAME = 'Resources'
 
 const isClient = RunService.IsClient()
 
-function getInstance<T extends Instance = Instance> (instanceType: (new () => T) | string, name: string, parent: Instance, waitForChild: boolean): T {
+function getInstance<T extends Instance = Instance> (instanceType: (new () => T) | string, name: string, parent: Instance, waitForChild?: boolean): T {
   if (waitForChild) {
     return parent.WaitForChild<T>(name)
   } else {
@@ -24,12 +24,12 @@ function getInstance<T extends Instance = Instance> (instanceType: (new () => T)
 }
 
 const getRootFolder = () => getInstance(Folder, RESOURCES_NAME, ReplicatedStorage, isClient)
-const getLocalRootFolder = () => getInstance(Folder, RESOURCES_NAME, isClient ? Players.LocalPlayer! : ServerStorage, false)
+const getLocalRootFolder = () => getInstance(Folder, RESOURCES_NAME, isClient ? Players.LocalPlayer! : ServerStorage)
 
 export function getResource<T extends Instance = Instance> (type: (new () => T) | string, name: string): T {
   return getInstance(type, name, getInstance(Folder, typeof type === 'string' ? type : tostring(type), getRootFolder(), isClient), isClient)
 }
 
 export function getLocalResource<T extends Instance = Instance> (type: (new () => T) | string, name: string): T {
-  return getInstance(type, name, getInstance(Folder, typeof type === 'string' ? type : tostring(type), getLocalRootFolder(), isClient), false)
+  return getInstance(type, name, getInstance(Folder, typeof type === 'string' ? type : tostring(type), getLocalRootFolder()))
 }
