@@ -1,21 +1,24 @@
 {
   "name": "rbx-resources",
-  "version": "0.0.4",
-  "description": "RoStrap Resources",
-  "main": "./src/resources.lua",
-  "dependencies": {},
+  "version": "0.0.9",
+  "description": "Centralize game assets with a Resources folder.",
+  "main": "./out/init.lua",
+  "dependencies": {
+    "rbx-services": "^1.0.15"
+  },
   "devDependencies": {
-    "rbx-types": "^1.0.65"
+    "rbx-types": "^1.0.81"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rm -rf out && rbxtsc --noInclude"
   },
   "keywords": [],
   "author": "evaera",
   "license": "MIT",
-  "typings": "./index.d.ts",
+  "typings": "./out/index.d.ts",
   "repository": {
-		"type": "git",
-		"url": "https://github.com/evaera/rbx-resources.git"
-	}
+    "type": "git",
+    "url": "https://github.com/evaera/rbx-resources.git"
+  }
 }

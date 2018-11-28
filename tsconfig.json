@@ -1,0 +1,17 @@
+{
+	"compilerOptions": {
+		"outDir": "out",
+		"rootDir": "src",
+		"module": "commonjs",
+		"strict": true,
+		"noImplicitAny": true,
+		"noLib": true,
+		"downlevelIteration": true,
+		"declaration": true,
+		"target": "es6",
+		"types": ["rbx-types"],
+	},
+	"typeAcquisition": {
+		"enable": true
+	}
+}
