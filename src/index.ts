@@ -24,7 +24,7 @@ function getInstance<T extends Instance = Instance> (instanceType: (new () => T)
 }
 
 const getRootFolder = () => getInstance(Folder, RESOURCES_NAME, ReplicatedStorage, isClient)
-const getLocalRootFolder = () => getInstance(Folder, RESOURCES_NAME, isClient ? ServerStorage : Players.LocalPlayer!, false)
+const getLocalRootFolder = () => getInstance(Folder, RESOURCES_NAME, isClient ? Players.LocalPlayer! : ServerStorage, false)
 
 export function getResource<T extends Instance = Instance> (type: (new () => T) | string, name: string): T {
   return getInstance(type, name, getInstance(Folder, typeof type === 'string' ? type : tostring(type), getRootFolder(), isClient), isClient)

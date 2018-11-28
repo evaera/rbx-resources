@@ -1,6 +1,6 @@
 {
   "name": "rbx-resources",
-  "version": "0.0.9",
+  "version": "0.0.11",
   "description": "Centralize game assets with a Resources folder.",
   "main": "./out/init.lua",
   "dependencies": {
