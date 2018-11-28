@@ -27,7 +27,7 @@ You can also call `getResource` with a string instead of an Instance type as the
 For example, you could create a `Weapon` folder inside of the `Resources` folder in ReplicatedStorage, and then you can place named weapon models inside of it. Then, in your code:
 
 ```ts
-const sword = getResource("Weapon", "Darkheart");
+const sword = getResource<Model>("Weapon", "Darkheart");
 ```
 
 ## `getLocalResource`
