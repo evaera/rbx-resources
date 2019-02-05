@@ -6,7 +6,7 @@ rbx-resources exports two functions: `getResource` and `getLocalResource`.
 
 ## `getResource` with Instances
 
-When you call `getResource` with an Instance type and a name from the server, rbx-resources will:
+When you call `getResource` with an Instance value from the `rbx-new` package and a name from the server, rbx-resources will:
 
 - Create a folder named `Resources` in ReplicatedStorage if it doesn't already exist
 - Create a sub-folder named after the ClassName of the Instance type
@@ -17,6 +17,7 @@ When you call `getResource` from the client, it will follow the same process abo
 This means that getting the same RemoteEvent on both the server and client is as easy as this:
 
 ```ts
+import { RemoteEvent } from 'rbx-new';
 const event = getResource(RemoteEvent, "SomeRemoteEvent");
 ```
 

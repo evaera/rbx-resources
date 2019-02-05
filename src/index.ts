@@ -1,4 +1,5 @@
 import { RunService, ReplicatedStorage, ServerStorage, Players } from 'rbx-services'
+import { Folder } from 'rbx-new'
 
 const RESOURCES_NAME = 'Resources'
 
