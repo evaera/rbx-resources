@@ -5,7 +5,7 @@
   "main": "./out/init.lua",
   "dependencies": {
     "rbx-new": "^1.0.1",
-    "rbx-services": "^1.0.15"
+    "rbx-services": "^1.0.20"
   },
   "devDependencies": {
     "rbx-types": "^1.0.117"
