@@ -1,5 +1,5 @@
-import { RunService, ReplicatedStorage, ServerStorage, Players } from 'rbx-services'
-import { Folder } from 'rbx-new'
+import { Folder } from 'rbx-new';
+import { Players, ReplicatedStorage, RunService, ServerStorage } from 'rbx-services';
 
 const RESOURCES_NAME = 'Resources'
 
@@ -11,7 +11,7 @@ function getInstance<T extends Instance = Instance> (instanceType: (new () => T)
   } else {
     let instance = parent.FindFirstChild<T>(name)
     if (!instance) {
-      if (typeof instanceType === 'string') {
+      if (typeIs(instanceType, 'string')) {
         throw `Resource folder ${instanceType} is not present inside ${parent.GetFullName()}`
       } else {
         instance = new instanceType()
@@ -28,9 +28,9 @@ const getRootFolder = () => getInstance(Folder, RESOURCES_NAME, ReplicatedStorag
 const getLocalRootFolder = () => getInstance(Folder, RESOURCES_NAME, isClient ? Players.LocalPlayer! : ServerStorage)
 
 export function getResource<T extends Instance = Instance> (type: (new () => T) | string, name: string): T {
-  return getInstance(type, name, getInstance(Folder, typeof type === 'string' ? type : tostring(type), getRootFolder(), isClient), isClient)
+  return getInstance(type, name, getInstance(Folder, typeIs(type, 'string') ? type : tostring(type), getRootFolder(), isClient), isClient)
 }
 
 export function getLocalResource<T extends Instance = Instance> (type: (new () => T) | string, name: string): T {
-  return getInstance(type, name, getInstance(Folder, typeof type === 'string' ? type : tostring(type), getLocalRootFolder()))
+  return getInstance(type, name, getInstance(Folder, typeIs(type, 'string') ? type : tostring(type), getLocalRootFolder()))
 }
