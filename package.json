@@ -1,14 +1,15 @@
 {
-  "name": "rbx-resources",
+  "name": "@rbxts/resources",
   "version": "0.0.16",
   "description": "Centralize game assets with a Resources folder.",
   "main": "./out/init.lua",
   "dependencies": {
-    "rbx-new": "^1.0.1",
-    "rbx-services": "^1.0.20"
+    "@rbxts/new": "^1.0.1",
+    "@rbxts/services": "^1.0.22",
+    "rbx-new": "^1.0.1"
   },
   "devDependencies": {
-    "rbx-types": "^1.0.117"
+    "@rbxts/types": "^1.0.192"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

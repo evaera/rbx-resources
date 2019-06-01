@@ -1,5 +1,5 @@
-import { Folder } from 'rbx-new';
-import { Players, ReplicatedStorage, RunService, ServerStorage } from 'rbx-services';
+import { Folder } from '@rbxts/new'
+import { Players, ReplicatedStorage, RunService, ServerStorage } from '@rbxts/services'
 
 const RESOURCES_NAME = 'Resources'
 
@@ -25,7 +25,7 @@ function getInstance<T extends Instance = Instance> (instanceType: (new () => T)
 }
 
 const getRootFolder = () => getInstance(Folder, RESOURCES_NAME, ReplicatedStorage, isClient)
-const getLocalRootFolder = () => getInstance(Folder, RESOURCES_NAME, isClient ? Players.LocalPlayer! : ServerStorage)
+const getLocalRootFolder = () => getInstance(Folder, RESOURCES_NAME, isClient ? Players.LocalPlayer : ServerStorage)
 
 export function getResource<T extends Instance = Instance> (type: (new () => T) | string, name: string): T {
   return getInstance(type, name, getInstance(Folder, typeIs(type, 'string') ? type : tostring(type), getRootFolder(), isClient), isClient)

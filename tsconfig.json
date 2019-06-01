@@ -9,7 +9,7 @@
 		"downlevelIteration": true,
 		"declaration": true,
 		"target": "es6",
-		"types": ["rbx-types"],
+		"typeRoots": ["node_modules/@rbxts"],
 		"allowSyntheticDefaultImports": true
 	},
 	"typeAcquisition": {
