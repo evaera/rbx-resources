@@ -9,7 +9,7 @@
     "rbx-new": "^1.0.1"
   },
   "devDependencies": {
-    "@rbxts/types": "^1.0.192"
+    "@rbxts/types": "^1.0.249"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
