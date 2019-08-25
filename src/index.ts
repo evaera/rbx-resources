@@ -27,10 +27,10 @@ function getInstance<T extends Instance = Instance> (instanceType: (new () => T)
 const getRootFolder = () => getInstance(Folder, RESOURCES_NAME, ReplicatedStorage, isClient)
 const getLocalRootFolder = () => getInstance(Folder, RESOURCES_NAME, isClient ? Players.LocalPlayer : ServerStorage)
 
-export function getResource<T extends Instance = Instance> (type: (new () => T) | string, name: string): T {
-  return getInstance(type, name, getInstance(Folder, typeIs(type, 'string') ? type : tostring(type), getRootFolder(), isClient), isClient)
+export function getResource<T extends Instance = Instance> (resourceType: (new () => T) | string, name: string): T {
+  return getInstance(resourceType, name, getInstance(Folder, typeIs(resourceType, 'string') ? resourceType : tostring(resourceType), getRootFolder(), isClient), isClient)
 }
 
-export function getLocalResource<T extends Instance = Instance> (type: (new () => T) | string, name: string): T {
-  return getInstance(type, name, getInstance(Folder, typeIs(type, 'string') ? type : tostring(type), getLocalRootFolder()))
+export function getLocalResource<T extends Instance = Instance> (resourceType: (new () => T) | string, name: string): T {
+  return getInstance(resourceType, name, getInstance(Folder, typeIs(resourceType, 'string') ? resourceType : tostring(resourceType), getLocalRootFolder()))
 }
